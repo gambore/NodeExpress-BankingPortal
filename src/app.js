@@ -24,6 +24,10 @@ app.get('/credit', (req, res) => res.render('account', { account: accounts.credi
 
 app.get('/transfer', (req, res) => res.render('transfer'));
 
+app.post('/transfer', (req, res) => {
+  
+});
+
 app.get('/profile', (req, res) => res.render('profile', { user: users[0] }));
 
 app.listen(3000, () => { console.log('PS Project Running on port 3000!') });
