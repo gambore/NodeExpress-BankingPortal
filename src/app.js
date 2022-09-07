@@ -28,6 +28,7 @@ app.post('/transfer', (req, res) => {
   accounts[req.body.from].balance -= req.body.amount;
   accounts[req.body.to].balance += parseInt(req.body.amount, 10);
   let accountsJSON = JSON.stringify(accounts, null, 4)
+  fs.writeFileSync(path.join(__dirname, 'json', 'accounts.json'), accountsJSON, 'utf-8');
 });
 
 app.get('/profile', (req, res) => res.render('profile', { user: users[0] }));
