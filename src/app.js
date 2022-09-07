@@ -25,7 +25,7 @@ app.get('/credit', (req, res) => res.render('account', { account: accounts.credi
 app.get('/transfer', (req, res) => res.render('transfer'));
 
 app.post('/transfer', (req, res) => {
-  
+  accounts[req.body.from].balance -= req.body.amount;
 });
 
 app.get('/profile', (req, res) => res.render('profile', { user: users[0] }));
